@@ -1,0 +1,63 @@
+@{
+  Layout = "_Layout";
+}
+
+@model BestRestaurants.Models.Restaurant;
+
+<h4>Add a new Restaurant</h4>
+@using (Html.BeginForm())
+{
+  @Html.LabelFor(model => model.Name)
+  @Html.EditorFor(model => model.Name, new { required="required"})
+  <br>
+  @Html.LabelFor(model => model.Cuisine)
+  @Html.DropDownList("CuisineId")
+  <br>
+  <p>Times of operation:</p>
+  <p>Sunday:</p>
+  @Html.LabelFor(model => model.SundayOpen)
+  @Html.EditorFor(model => model.SundayOpen, new { required="required" })
+  @Html.LabelFor(model => model.SundayClose)
+  @Html.EditorFor(model => model.SundayClose, new { required="required" })
+  <br>
+  <p>Monday:</p>
+  @Html.LabelFor(model => model.MondayOpen)
+  @Html.EditorFor(model => model.MondayOpen, new { required="required" })
+  @Html.LabelFor(model => model.MondayClose)
+  @Html.EditorFor(model => model.MondayClose, new { required="required" })
+  <br>
+  <p>Tuesday:</p>
+  @Html.LabelFor(model => model.TuesdayOpen)
+  @Html.EditorFor(model => model.TuesdayOpen, new { required="required" })
+  @Html.LabelFor(model => model.TuesdayClose)
+  @Html.EditorFor(model => model.TuesdayClose, new { required="required" })
+  <br>
+  <p>Wednesday:</p>
+  @Html.LabelFor(model => model.WednesdayOpen)
+  @Html.EditorFor(model => model.WednesdayOpen, new { required="required" })
+  @Html.LabelFor(model => model.WednesdayClose)
+  @Html.EditorFor(model => model.WednesdayClose, new {  required="required" })
+  <br>
+  <p>Thursday:</p>
+  @Html.LabelFor(model => model.ThursdayOpen)
+  @Html.EditorFor(model => model.ThursdayOpen, new { required="required" })
+  @Html.LabelFor(model => model.ThursdayClose)
+  @Html.EditorFor(model => model.ThursdayClose, new { required="required" })
+  <br>
+  <p>Friday:</p>
+  @Html.LabelFor(model => model.FridayOpen)
+  @Html.EditorFor(model => model.FridayOpen, new { required="required" })
+  @Html.LabelFor(model => model.FridayClose)
+  @Html.EditorFor(model => model.FridayClose, new { required="required" })
+  <br>
+  <p>Saturday:</p>
+  @Html.LabelFor(model => model.SaturdayOpen)
+  @Html.EditorFor(model => model.SaturdayOpen, new { required="required" })
+  @Html.LabelFor(model => model.SaturdayClose)
+  @Html.EditorFor(model => model.SaturdayClose, new { required="required" })
+  <br>
+  <input type="submit" value="Add new Restaurant" />
+}
+
+
+<p>@Html.ActionLink("Show All Restaurants", "Index")</p>

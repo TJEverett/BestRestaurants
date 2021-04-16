@@ -1,0 +1,29 @@
+@{
+  Layout="_Layout";
+}
+
+@using BestRestaurants.Models
+@model BestRestaurants.Models.Cuisine
+
+@if (Model.Restaurants.Count == 0)
+{
+  <h2>Are you sure you want to delete this?</h2>
+  <h3>Type: @Html.DisplayFor(model => model.Type)</h3>
+  @using (Html.BeginForm())
+  {
+    <input type="submit" value="Delete" />
+  }
+}
+else
+{
+  <h2>Before you can delete this you must first empty the list of restaurants.</h2>
+  <h3>This can be done by either deleting the restaurant or changing which cuisine it is in.</h3>
+  <ul>
+  @foreach (Restaurant restaurant in Model.Restaurants)
+  {
+    <li>@Html.ActionLink($"{restaurant.Name}", "Show", "Restaurants", new { id = restaurant.RestaurantId })</li>
+  }
+  </ul>
+}
+
+@Html.ActionLink("Back to List", "Index")

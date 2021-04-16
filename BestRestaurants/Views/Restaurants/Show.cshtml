@@ -1,0 +1,31 @@
+@{
+  Layout="_Layout";
+}
+
+@using BestRestaurants.Models
+@model BestRestaurants.Models.Restaurant
+
+<h2>Restaurant Details:</h2>
+<br>
+<h3>Name: @Html.DisplayFor(model => model.Name)</h3>
+<h3>Type of cuisine: @Model.Cuisine.Type</h3>
+<h3>Times:</h3>
+<h4>Sunday:</h4>
+<p>From @Html.DisplayFor(model => model.SundayOpen) to @Html.DisplayFor(model => model.SundayClose)</p>
+<h4>Monday:</h4>
+<p>From @Html.DisplayFor(model => model.MondayOpen) to @Html.DisplayFor(model => model.MondayClose)</p>
+<h4>Tuesday:</h4>
+<p>From @Html.DisplayFor(model => model.TuesdayOpen) to @Html.DisplayFor(model => model.TuesdayClose)</p>
+<h4>Wednesday:</h4>
+<p>From @Html.DisplayFor(model => model.WednesdayOpen) to @Html.DisplayFor(model => model.WednesdayClose)</p>
+<h4>Thursday:</h4>
+<p>From @Html.DisplayFor(model => model.ThursdayOpen) to @Html.DisplayFor(model => model.ThursdayClose)</p>
+<h4>Friday:</h4>
+<p>From @Html.DisplayFor(model => model.FridayOpen) to @Html.DisplayFor(model => model.FridayClose)</p>
+<h4>Saturday:</h4>
+<p>From @Html.DisplayFor(model => model.SaturdayOpen) to @Html.DisplayFor(model => model.SaturdayClose)</p>
+<br>
+<p>@Html.ActionLink("Edit Details", "Edit", new { id = Model.RestaurantId })</p>
+<p>@Html.ActionLink("Delete Entry", "Delete", new { id = Model.RestaurantId})</p>
+<br>
+<p>@Html.ActionLink("Show All Restaurants", "Index")</p>
